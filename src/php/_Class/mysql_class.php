@@ -1,10 +1,10 @@
 <?php 
 class mySQLAdapter{
     // Coloque aqui as Informações do Banco de Dados
-    var $host = "localhost";
-    var $user = "root"; # Usuário no Host/Servidor
+   var $host = "localhost";
+   var $user = "root"; # Usuário no Host/Servidor
    var $senha = "1H0z9f4e"; # Senha no Host/Servidor
-   var $dbase = "mydb"; # Nome do seu Banco de Dados
+   var $dbase = "altmerweb"; # Nome do seu Banco de Dados
 
     // Cria as variáveis que Utilizaremos
     var $query;

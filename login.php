@@ -10,7 +10,7 @@
     
         <title>AltmerWeb - Sistema de Gerenciamento de Gastos Pessoais</title>
     
-        <script src="bootstrap/js/jQuery.js"></script>
+        <script src="lib/bootstrap/js/jQuery.js"></script>
 
         <!-- CSS -->
         <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
@@ -34,7 +34,8 @@
 								<div class="animated bounceIn" id="form_1" data-animation="bounceIn">
 									<div class="form-header">
                                         <h4>AltmerWeb</h4>
-								  </div>
+								 	<img src="img/logo.jpg" />
+								 	</div>
 								  <div class="form-main">
 									  <form id="form1" method="post" action="src/php/login.php">
 									      <div id="result"></div>

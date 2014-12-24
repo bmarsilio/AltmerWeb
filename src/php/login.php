@@ -10,7 +10,6 @@ session_start();
 
 	$usuario = $_POST['usuario'];
 	$senha   = $_POST['senha'];
-	$mesa 	 = $_POST['mesa'];
 
     $auth = $login->authUser($usuario,$senha);
 
@@ -23,9 +22,6 @@ session_start();
 	if($result == 1){
 		$_SESSION['logado'] = true;
 		$_SESSION['usuario'] = $usuario;
-		$_SESSION['nome'] = $login->getNome($usuario);
-		$_SESSION['idAtendente'] = $login->getIdAtendente($login->getNome($usuario));
-		$_SESSION['mesa'] = $mesa;
 	}
 
 	print($result);

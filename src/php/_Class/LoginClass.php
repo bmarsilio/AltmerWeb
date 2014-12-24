@@ -15,15 +15,13 @@ class LoginClass
                     select
                         count(*) as result
                     from
-                        zd_user
+                        usuario
                     where
-                        stLogin = '$username'
-                        and stSenha = md5('$password')
+                        login = '$username'
+                        and senha = md5('$password')
                   ";
 
         $resultSet = $this->conexao->sql_query($query);
-
-
 
         $count = 0;
 
@@ -32,58 +30,5 @@ class LoginClass
         }
 
         return $count;
-    }
-
-    public function getNome($username){
-        $query =  "
-			SELECT 
-			    B.stNome AS nome
-			FROM 
-				zd_user A
-			    INNER JOIN zd_atendente B ON (B.idUsuario = A.idUsuario)
-			WHERE
-				A.stLogin = '$username'
-        ";
-
-        $resultSet = $this->conexao->sql_query($query);
-
-        while ($row = mysql_fetch_assoc($resultSet)) {
-            $nome = $row['nome'];
-        }
-
-        return $nome;
-    }
-
-    public function getIdAtendente($nomeAtendente){
-        $query =  "
-			SELECT 
-			    A.idAtendente
-			FROM 
-				zd_atendente A
-			WHERE
-				A.stNome = '$nomeAtendente'
-        ";
-
-        $resultSet = $this->conexao->sql_query($query);
-
-        while ($row = mysql_fetch_assoc($resultSet)) {
-            $idAtendente = $row['idAtendente'];
-        }
-
-        return $idAtendente;
-    }
-
-    public function retornaListaMesas(){
-    	$sql = "
-    		SELECT
-    			A.mesaId as mesaId
-    			A.stDescricao as mesa
-    		FROM
-    			zd_mesa
-    	";
-
-    	$resultSet = $this->conexao->sql_query($sql);
-
-    	return $resultSet;
     }
 } 
