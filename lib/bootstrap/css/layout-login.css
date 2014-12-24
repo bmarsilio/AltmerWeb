@@ -54,7 +54,7 @@ body{overflow:hidden;}
   margin-top: 20px;
 }
 .authenty.signin-main {
-  background:url(../../img/bg-glow.jpg);
+  background:url(../../../img/bg-glow.jpg);
 }
 .authenty.signin-main .title {
   text-align: center;
