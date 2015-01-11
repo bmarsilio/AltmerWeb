@@ -24,6 +24,11 @@ abstract class Bootstrap
 				$controller->$route['action']();
 			}
 		});
+			# se nao tiver encontrado nenhuma rota, da erro de 'pagina nao encontrada'
+			$class = "App\\Controllers\\Error404";
+			$controller = new $class;
+			$controller->index();
+			
 	}
 
 	protected function setRoutes(array $routes)
