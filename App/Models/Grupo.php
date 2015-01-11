@@ -26,4 +26,21 @@ class Grupo extends Table
 
 		return $resultado;
 	}
+
+	#metodo para listar todos os grupos cadastrados
+	public function listaGrupos()
+	{
+		$sql = "
+				SELECT
+					grupoId,
+					descricao
+				FROM
+					grupo
+		";
+
+		$consulta = $this->db->prepare($sql);
+		$resultado = $consulta->execute();
+
+		return $this->db->query($sql);
+	}
 }

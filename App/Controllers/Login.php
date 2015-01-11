@@ -18,8 +18,13 @@ class Login extends Action
 		$autentica = Container::getClass("Login");
 		//var_dump($autentica);
 		$dados = $autentica->autentica($_POST);
+		//die(var_dump($_SESSION));
 
 		if($dados){
+			$_SESSION[nome] = $dados[nome];
+			$_SESSION[usuarioId] = $dados[usuarioId];
+			$_SESSION[login] = $dados[login];
+			
 			header('Location: /');
 		}else{
 			header('Location: login');

@@ -1,2 +1,63 @@
 <h3>Lançamentos</h3>
 <hr />
+<form class="form-horizontal" role="form" action="cadastraLancamento" method="POST">
+	<div class="form-group">
+		<div class="col-sm-5">
+			<span class="glyphicon glyphicon-calendar"></span>
+			<label>Data:</label>
+			<input type="date" class="form-control" id="dataLancamento" name="dataLancamento" value="<?php echo date('d/m/Y'); ?>" required="required" />
+
+			<br />
+
+			<span class="glyphicon glyphicon-magnet"></span>
+			<label>Grupo:</label>
+			<select class="form-control" id="lancamentoGrupoId" name="lancamentoGrupoId">
+				<option value="">-Selecione-</option>
+				<?php
+					foreach($this->view->listaGrupos as $key){
+						echo "<option value=\"$key[grupoId]\">$key[descricao]</option>";
+					}
+				?>
+			</select>
+
+			<br />
+
+			<span class="glyphicon glyphicon-usd"></span>
+			<label>Valor:</label>
+			<input type="text" class="form-control" id="valorLancamento" name="valorLancamento" placeholder="Valor" required="required" />
+
+			<br />
+			
+			<span class="glyphicon glyphicon-pencil"></span>
+			<label>Descrição:</label>
+			<input type="text" class="form-control" id="descricaoLancamento" name="descricaoLancamento" placeholder="Descrição" />
+		</div>
+	</div>
+
+	<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Salvar</button>
+</form>
+
+<script type="text/javascript">
+
+	/*mascaras*/
+	jQuery(function($){
+		$("#dataLancamento").mask("99/99/9999");
+	});
+
+	/*funcao para validar apenas numeros e virgula no campo de valor*/
+	$(function() {
+		$('#valorLancamento').keypress(function(event) {
+			var tecla = (window.event) ? event.keyCode : event.which;
+			if ((tecla > 47 && tecla < 58 || tecla == 44)) 
+				return true;
+			else {
+				if (tecla != 8) 
+					return false;
+				else 
+					return true;
+			}
+		});
+
+	});
+
+</script>

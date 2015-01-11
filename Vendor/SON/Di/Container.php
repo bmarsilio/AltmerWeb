@@ -11,5 +11,12 @@ class Container
 		$class = new $str_class(\App\Init::getDb());
 
 		return $class;
-	} 
+	}
+
+	public static function trataData($data)
+	{
+		$resultado = implode( '-', array_reverse( explode( '/', $data ) ) );
+
+		return $resultado;
+	}
 }

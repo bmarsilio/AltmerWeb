@@ -22,8 +22,8 @@ class Grupo extends Action
 	{
 		$this->render('grupo');
 
-		$conta = Container::getClass("Grupo");
-		$dados = $conta->inserirGrupo($_POST);
+		$grupo = Container::getClass("Grupo");
+		$dados = $grupo->inserirGrupo($_POST);
 
 		if($dados){
 ?>

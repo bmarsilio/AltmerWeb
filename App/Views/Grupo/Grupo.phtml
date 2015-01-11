@@ -7,7 +7,7 @@
 			<span class="glyphicon glyphicon-folder-open"></span>
 			<label> Conta</label>
 			<select class="form-control" id="contaGrupo" name="contaGrupo">
-				<option>-Selecione-</option>
+				<option value="">-Selecione-</option>
 				<?php
 					foreach($this->view->listaContas as $key){
 						echo "<option value=\"$key[contaId]\">$key[descricao]</option>";

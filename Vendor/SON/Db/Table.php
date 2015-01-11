@@ -34,12 +34,16 @@ abstract class Table
 	{
 		$sql = "
 				SELECT 
-					* 
+					usuarioId,
+					nome,
+					ativo,
+					login 
 				FROM 
 					{$this->table} 
 				WHERE
 					login = '$dados[usuario]'
 					AND senha = '$dados[senha]'
+					AND ativo = '1'
 		";
 		$consulta = $this->db->prepare($sql);
 		$consulta->execute();
