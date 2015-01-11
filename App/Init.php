@@ -22,6 +22,9 @@ class Init extends Bootstrap
 		$ar['autentica'] = array('route'=>'/autentica','controller'=>'login','action'=>'autentica');
 		$ar['logout'] = array('route'=>'/logout','controller'=>'logout','action'=>'index');
 
+		#cadastros
+		$ar['cadastraConta'] = array('route'=>'/cadastraConta','controller'=>'conta','action'=>'cadastraConta');
+			
 		$this->setRoutes($ar);
 	}
 
