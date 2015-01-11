@@ -15,7 +15,11 @@ class Container
 
 	public static function trataData($data)
 	{
-		$resultado = implode( '-', array_reverse( explode( '/', $data ) ) );
+		if(strpos($data,'/') > 0){
+			$resultado = implode( '-', array_reverse( explode( '/', $data ) ) );
+		}else{
+			$resultado = implode( '/', array_reverse( explode( '-', $data ) ) );
+		}
 
 		return $resultado;
 	}

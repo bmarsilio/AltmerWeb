@@ -26,6 +26,9 @@ class Init extends Bootstrap
 		$ar['cadastraConta'] = array('route'=>'/cadastraConta','controller'=>'conta','action'=>'cadastraConta');
 		$ar['cadastraGrupo'] = array('route'=>'/cadastraGrupo','controller'=>'grupo','action'=>'cadastraGrupo');
 		$ar['cadastraLancamento'] = array('route'=>'/cadastraLancamento','controller'=>'lancamento','action'=>'cadastraLancamento');
+
+		#baixar lancamentos
+		$ar['iniciaBaixa'] = array('route'=>'/iniciaBaixa','controller'=>'baixar','action'=>'iniciaBaixa');
 			
 		$this->setRoutes($ar);
 	}
