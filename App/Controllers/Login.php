@@ -13,4 +13,17 @@ class Login extends Action
 		$this->render('login',false);
 	}
 
+	public function autentica()
+	{
+		$autentica = Container::getClass("Login");
+		//var_dump($autentica);
+		$dados = $autentica->autentica($_POST);
+
+		if($dados){
+			header('Location: /');
+		}else{
+			header('Location: login');
+		}
+	}
+
 }

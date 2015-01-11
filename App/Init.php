@@ -19,7 +19,7 @@ class Init extends Bootstrap
 
 		# funcionalidades de login e logout
 		$ar['login'] = array('route'=>'/login','controller'=>'login','action'=>'index');
-		$ar['autentica'] = array('route'=>'/autentica','controller'=>'autentica','action'=>'index');
+		$ar['autentica'] = array('route'=>'/autentica','controller'=>'login','action'=>'autentica');
 		$ar['logout'] = array('route'=>'/logout','controller'=>'logout','action'=>'index');
 
 		$this->setRoutes($ar);
