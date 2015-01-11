@@ -29,4 +29,23 @@ abstract class Table
 
 		return $res;
 	}
+
+	public function autentica($dados)
+	{
+		$sql = "
+				SELECT 
+					* 
+				FROM 
+					{$this->table} 
+				WHERE
+					login = '$dados[usuario]'
+					AND senha = '$dados[senha]'
+		";
+		$consulta = $this->db->prepare($sql);
+		$consulta->execute();
+
+		$resultSet = $consulta->fetch();
+
+		return $resultSet;
+	}
 }

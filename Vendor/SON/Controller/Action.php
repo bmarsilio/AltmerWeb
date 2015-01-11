@@ -16,6 +16,7 @@ class Action
 	public function render($action, $layout = true)
 	{
 		$this->action = $action;
+		
 		if($layout == true && file_exists("../App/Views/layout.phtml")){
 			include_once '../App/Views/layout.phtml';
 		}else{
@@ -27,7 +28,6 @@ class Action
 	{
 		$atual = get_class($this);
 		$singleClassName = strtolower(str_replace("App\\Controllers\\", "", $atual));
-
 		include_once '../App/Views/'.$singleClassName.'/'.$this->action.'.phtml';
 	}
 
