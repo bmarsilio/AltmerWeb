@@ -8,6 +8,7 @@ class Conta extends Table
 {
 	protected $table = "conta";
 
+	#metodo para inserir as contas no banco
 	public function inserirConta($dados){
 		if($dados[descricaoConta]){
 			$sql = "
@@ -23,5 +24,22 @@ class Conta extends Table
 		}
 
 		return $resultado;
+	}
+
+	#metodo para listar todas as contas cadastradas
+	public function listaContas()
+	{
+		$sql = "
+				SELECT
+					contaId,
+					descricao
+				FROM
+					conta
+		";
+
+		$consulta = $this->db->prepare($sql);
+		$resultado = $consulta->execute();
+
+		return $this->db->query($sql);
 	}
 }

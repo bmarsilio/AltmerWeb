@@ -1,20 +1,26 @@
 <h3>Cadastro de Grupos</h3>
 <hr />
 
-<form class="form-horizontal" role="from" action="#" method="POST">
+<form class="form-horizontal" role="from" action="cadastraGrupo" method="POST">
 	<div class="form-group">
 		<div class="col-sm-5">
 			<span class="glyphicon glyphicon-folder-open"></span>
 			<label> Conta</label>
-			<select class="form-control">
+			<select class="form-control" id="contaGrupo" name="contaGrupo">
 				<option>-Selecione-</option>
+				<?php
+					foreach($this->view->listaContas as $key){
+						echo "<option value=\"$key[contaId]\">$key[descricao]</option>";
+					}
+				?>
 			</select>
 
 			<br />
 
 			<span class="glyphicon glyphicon-pencil"></span>
 			<label> Descrição Grupo</label>
-			<input type="text" class="form-control" placeholder="Descrição" id="descricaoGrupo" name="descricaoGrupo" required="required"/>
+			<input type="text" class="form-control" placeholder="Descrição" id="descricaoGrupo" name="descricaoGrupo" required="required" 
+			value="<?php echo $_POST[descricaoGrupo]?>"/>
 		</div>
 	</div>
 	

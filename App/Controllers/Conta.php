@@ -7,16 +7,17 @@ use SON\Di\Container;
 
 class Conta extends Action
 {
-
+	#metodo index
 	public function index()
 	{
 		$this->render('conta');
 	}
 
+	#metodo para cadastrar as contas no banco
 	public function cadastraConta()
 	{
 		$this->render('conta');
-		
+
 		$conta = Container::getClass("Conta");
 		$dados = $conta->inserirConta($_POST);
 
