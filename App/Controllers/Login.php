@@ -27,6 +27,7 @@ class Login extends Action
 			
 			header('Location: /');
 		}else{
+
 			header('Location: login');
 		}
 	}

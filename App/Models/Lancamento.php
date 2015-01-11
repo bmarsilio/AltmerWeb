@@ -9,8 +9,10 @@ class Lancamento extends Table
 {
 	protected $table = "lancamento";
 
-	#metodo para inserir as contas no banco
+	#metodo para inserir os lancamentos no banco
 	public function inserirLancamento($dados){
+		
+		#trata a hora por no MySql nao funciona insert com data no padrao 'dd/mm/yyyy', so funciona no padrao 'yyyy-mm-dd'
 		$data = Container::trataData($dados[dataLancamento]);
 
 		$sql = "
