@@ -19,7 +19,7 @@ class Baixar extends Action
 
 	public function iniciaBaixa()
 	{
-		echo 'teste';
+		$this->render('IniciaBaixa',false);
 	}
 
 }

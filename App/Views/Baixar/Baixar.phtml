@@ -33,7 +33,7 @@
 							<td>R$ $key[valor]</td>
 							<td>$key[descricao]</td>
 							<td>
-								<button type=\"button\" class=\"btn btn-default\" title=\"Clique aqui para baixar o lançamento\" data-toggle=\"modal\" data-target=\"#myModal\" onclick=\"IniciaBaixa(<?php echo $key[lancamentoId]?>,<?php echo $_SESSION[usuarioId]?>)\">
+								<button type=\"button\" class=\"btn btn-default\" title=\"Clique aqui para baixar o lançamento\" data-toggle=\"modal\" data-target=\"#myModal\" onclick=\"IniciaBaixa($key[lancamentoId],$_SESSION[usuarioId])\">
 									<span class=\"glyphicon glyphicon-ok\"></span>
 								</button>
 							</td>
