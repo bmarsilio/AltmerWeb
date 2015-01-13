@@ -1,1 +1,61 @@
-chamou!
+<?php
+use SON\Di\Container;
+
+	foreach ($this->view->iniciarBaixa as $key) {
+		$key[dataLancamento] = Container::trataData($key[dataLancamento]);
+		//var_dump($key);
+		echo ("
+				<form role=\"form\" action=\"encerraAtendimento\" method=\"POST\">
+					<div class=\"form-group\">
+						<span class=\"glyphicon glyphicon-circle-arrow-up\"></span><label> Dados Lançamento</label>
+						<hr />
+						<label>
+							IdLancamento:
+						</label>
+							<input type=\"text\" class=\"form-control\" id=\"lancamentoId\" name=\"lancamentoId\" readOnly=readOnly 
+							value=\"$key[lancamentoId]\">
+						
+						<br />
+
+						<label>
+							usuarioLancamento:
+						</label>
+							<input type=\"text\" class=\"form-control\" id=\"usuarioLancamento\" name=\"usuarioLancamento\" readOnly=readOnly 
+							value=\"$key[usuarioLancamento]\">
+						
+						<br />
+
+						<label>
+							grupo:
+						</label>
+							<input type=\"text\" class=\"form-control\" id=\"grupo\" name=\"grupo\" readOnly=readOnly 
+							value=\"$key[grupo]\">
+						
+						<br />
+						
+						<label>
+							dataLancamento:
+						</label>
+							<input type=\"text\" class=\"form-control\" id=\"dataLancamento\" name=\"dataLancamento\" readOnly=readOnly 
+							value=\"$key[dataLancamento]\">
+						
+						<br />
+
+						<label>
+							valorLancamento:
+						</label>
+							<input type=\"text\" class=\"form-control\" id=\"valorLancamento\" name=\"valorLancamento\" readOnly=readOnly 
+							value=\"R$ $key[valor]\">
+						
+						<br />
+
+						<label>
+							descricao:
+						</label>
+							<input type=\"text\" class=\"form-control\" id=\"descricao\" name=\"descricao\" readOnly=readOnly 
+							value=\"$key[descricao]\">
+					</div>
+				</form>
+		");
+	}
+ ?>

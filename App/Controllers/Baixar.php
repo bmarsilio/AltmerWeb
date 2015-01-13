@@ -19,6 +19,10 @@ class Baixar extends Action
 
 	public function iniciaBaixa()
 	{
+		$iniciarBaixa = Container::getClass("Baixar");
+		$dados = $iniciarBaixa->listarLancamento($_POST);
+		$this->view->iniciarBaixa = $dados;
+
 		$this->render('IniciaBaixa',false);
 	}
 
