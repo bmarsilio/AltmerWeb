@@ -4,7 +4,7 @@ use SON\Di\Container;
 	foreach ($this->view->iniciarBaixa as $key) {
 		$key[dataLancamento] = Container::trataData($key[dataLancamento]);
 		//var_dump($key);
-		echo ("
+		/*echo ("
 				<form role=\"form\" action=\"encerraAtendimento\" method=\"POST\">
 					<div class=\"form-group\">
 						<span class=\"glyphicon glyphicon-circle-arrow-up\"></span><label> Dados Lançamento</label>
@@ -56,6 +56,67 @@ use SON\Di\Container;
 							value=\"$key[descricao]\">
 					</div>
 				</form>
+		");*/
+		echo ("
+				<ul id=\"myTab\" class=\"nav nav-tabs\">
+				   <li class=\"active\"><a href=\"#dados\" data-toggle=\"tab\">
+				      <span class=\"glyphicon glyphicon-circle-arrow-up\"></span> Dados Lançamento</a>
+				   </li>
+				   <li><a href=\"#baixar\" data-toggle=\"tab\">Baixar</a></li>
+				</ul>
+
+				<div id=\"myTabContent\" class=\"tab-content\">
+					<div class=\"tab-pane fade in active\" id=\"dados\">
+						<div class=\"row\">
+							<div class=\"col-sm-4\">
+								<label>IdLancamento:</label>
+									<input type=\"text\" class=\"form-control\" id=\"lancamentoId\" name=\"lancamentoId\" readOnly=readOnly value=\"$key[lancamentoId]\">
+							</div>
+							
+							<div class=\"col-sm-3\">
+								<label>dataLancamento:</label>
+									<input type=\"text\" class=\"form-control\" id=\"dataLancamento\" name=\"dataLancamento\" readOnly=readOnly value=\"$key[dataLancamento]\">
+							</div>
+
+							<div class=\"col-sm-4\">
+								<label>usuarioLancamento:</label>
+									<input type=\"text\" class=\"form-control\" id=\"usuarioLancamento\" name=\"usuarioLancamento\" readOnly=readOnly value=\"$key[usuarioLancamento]\">
+							</div>
+						</div>
+						
+						<div class=\"row\">
+							<div class=\"col-sm-4\">
+								<label>valorLancamento:</label>
+									<input type=\"text\" class=\"form-control\" id=\"valorLancamento\" name=\"valorLancamento\" readOnly=readOnly value=\"R$ $key[valor]\">
+							</div>
+
+							<div class=\"col-sm-5\">
+								<label>grupo:</label>
+									<input type=\"text\" class=\"form-control\" id=\"grupo\" name=\"grupo\" readOnly=readOnly value=\"$key[grupo]\">
+							</div>
+						</div>
+						
+						<div class=\"row\">
+							<div class=\"col-sm-12\">
+								<label>descricao:</label>
+									<input type=\"text\" class=\"form-control\" id=\"descricao\" name=\"descricao\" readOnly=readOnly value=\"$key[descricao]\">
+							</div>
+						</div>
+						
+					</div>
+					
+
+				   <div class=\"tab-pane fade\" id=\"baixar\">
+				      <p>baixar</p>
+				   </div>
+				</div>
+
 		");
 	}
  ?>
+
+	<script>
+		$(function () {
+			$('#myTab li:eq(1) a').tab('show');
+		});
+	</script>
